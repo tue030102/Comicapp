@@ -1,3 +1,4 @@
+import 'package:comicapp/chitiet.dart';
 import 'package:flutter/material.dart';
 
 class FullChapter extends StatefulWidget {
@@ -12,8 +13,11 @@ class _FullChapterState extends State<FullChapter> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Full Chapter - 1"),
-        backgroundColor: Colors.purple,
+        title: Text("Chapter 1 - Life and death",
+        style: Theme.of(context).textTheme.displayMedium!.copyWith(
+        fontWeight: FontWeight.bold, ),
+        ),
+        backgroundColor: Colors.black26,
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -23,61 +27,64 @@ class _FullChapterState extends State<FullChapter> {
                 padding: EdgeInsets.only(left:30),
               ),
               Card(
-                child: Image.asset("assets/1-o.jpg"),
+                child: Image.asset("./1-o.jpg"),
                 elevation: 10,
               ),
               Padding(
                 padding: EdgeInsets.only(left:30),
               ),
               Card(
-                child: Image.asset("assets/2-o.jpg"),
+                child: Image.asset("./2-o.jpg"),
                 elevation: 10,
               ),
               Padding(
                 padding: EdgeInsets.only(left:30),
               ),
               Card(
-                child: Image.asset("assets/3-o.jpg"),
+                child: Image.asset("./3-o.jpg"),
                 elevation: 10,
               ),
               Padding(
                 padding: EdgeInsets.only(left:30),
               ),
               Card(
-                child: Image.asset("assets4-o.jpg"),
+                child: Image.asset("./4-o.jpg"),
                 elevation: 10,
               ),
               Padding(
                 padding: EdgeInsets.only(bottom:30),
               ),
               Card(
-                child: Image.asset("assets/5-o.jpg"),
+                child: Image.asset("./8-o.jpg"),
                 elevation: 10,
               ),
               Padding(
                 padding: EdgeInsets.only(left:30),
               ),
-              Card(
-                child: Image.asset("assets/6-o.jpg"),
-                elevation: 10,
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle the action when the rating button is pressed
+                      // You can navigate to a rating screen or perform any other action
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Nextchapter(),
+                        ),
+                      );
+                    },
+                    child: Text('Next chapter'),
+                  ),
+                ],
               ),
               Padding(
-                padding: EdgeInsets.only(left:30),
+                padding: EdgeInsets.only(left: 30),
               ),
-              Card(
-                child: Image.asset("assets/7-o.jpg"),
-                elevation: 10,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left:30),
-              ),
-              Card(
-                child: Image.asset("assets/8-o.jpg"),
-                elevation: 10,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left:30),
-              ),
+              SizedBox(height: 20)
+
             ],
           ),
         ),

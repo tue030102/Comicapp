@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'fullchapter.dart';
+import 'account.dart';
 //import 'package:flutter_application_1/account.dart';
 //import 'package:flutter_application_1/chapterfull.dart';
 //import 'package:flutter_application_1/fullchapterkhac.dart';
@@ -33,7 +34,7 @@ class DetailsScreen extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             SizedBox(height: size.height * .0),
-                            BookInfo(),
+                             BookInfo(),
                           ],
                         )
                     ),
@@ -43,21 +44,21 @@ class DetailsScreen extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         ChapterCard(
-                          name: 'Money',
+                          name: 'Life and death',
                           chapterNumber: 1,
                           tag: 'Life is about change',
 
                         ),
                         ChapterCard(
-                          name: 'Money',
+                          name: 'Overcome adversity',
                           chapterNumber: 2,
-                          tag: 'Life is about change',
+                          tag: 'You can do it',
 
                         ),
                         ChapterCard(
-                          name: 'Money',
+                          name: 'Faith',
                           chapterNumber: 3,
-                          tag: 'Life is about change',
+                          tag: 'You believe in my self',
 
                         ),
                         ChapterCard(
@@ -66,12 +67,7 @@ class DetailsScreen extends StatelessWidget {
                           tag: 'Life is about change',
 
                         ),
-                        ChapterCard(
-                          name: 'Money',
-                          chapterNumber: 5,
-                          tag: 'Life is about change',
 
-                        ),
                         SizedBox(height: 10),
                       ],
                     ),
@@ -89,38 +85,38 @@ class DetailsScreen extends StatelessWidget {
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home page'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.note_alt_rounded), label: 'Truyện yêu thích'),
+                icon: Icon(Icons.favorite), label: 'Truyện yêu thích'),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Tài khoản',
             ),
           ],
-          //onTap: (int index) {
-          // if (index == 0) {
-          // Navigator.push(
-          // context,
-          //MaterialPageRoute(
-          //builder: (context) => ChapterDetailPage(chapterName: '',),
-          //),
-          //);
-          //} else if (index == 1) {
-          // Điều hướng đến trang QLDM khi ấn vào mục Lịch sử đơn mua
-          //Navigator.push(
-          //context,
-          //MaterialPageRoute(
-          //builder: (context) => FullChapter(chapterName: '',),
-          // ),
-          //);
-          //} else if (index == 2) {
-          // Điều hướng đến trang AccountPage khi ấn vào mục Tài khoản
-          //Navigator.push(
-          //context,
-          //MaterialPageRoute(
-          //  builder: (context) => AccountPage(),
-          // ),
-          //);
-          //  }
-          //  },
+          onTap: (int index) {
+           if (index == 0) {
+           Navigator.push(
+           context,
+          MaterialPageRoute(
+          builder: (context) => FullChapter(),
+          ),
+          );
+          } else if (index == 1) {
+
+          Navigator.push(
+          context,
+          MaterialPageRoute(
+          builder: (context) => FullChapter(),
+           ),
+          );
+          } else if (index == 2) {
+
+          Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AccountPage(),
+           ),
+          );
+            }
+            },
         )
     );
   }
@@ -141,7 +137,6 @@ class ChapterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
     return GestureDetector(
       onTap: () {
         // Navigate to FullChapter screen when the card is tapped
@@ -211,17 +206,14 @@ class BookInfo extends StatelessWidget {
                 style: Theme.of(context).textTheme.displayMedium,
               ),
               Text("Supreme",
-                style: Theme.of(context)
-                    .textTheme
-                    .displayMedium!
-                    .copyWith(
+                style: Theme.of(context).textTheme.displayMedium!.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Row(children: <Widget>[Expanded(
                 child: Column(children: <Widget>[
                   Text(
-                    "When the earth was flat andeveryone wanted to wining with an A mfdjjji kjg dkdkk kdjf jdhfjd uhufdf hudh huufh huudhf hdfgdf",
+                    "When the earth was flat andeveryone wanted to wining with an A hero. You believe in myself. You only one .I can do, you can do it.",
                     maxLines: 5,
                     style: TextStyle(
                       fontSize: 10,

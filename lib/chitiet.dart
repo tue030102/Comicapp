@@ -1,55 +1,95 @@
 import 'package:flutter/material.dart';
+import 'fullchapter.dart';
 
+class Nextchapter extends StatefulWidget {
 
-class Comic {
-  final String title;
-  final String author;
-  final String description;
-  final String view;
-
-  Comic({
-    required this.title,
-    required this.author,
-    required this.description,
-    required this.view,
-  });
+  @override
+  _Nextchapter createState() => _Nextchapter();
 }
-class chitiet extends StatelessWidget {
-  final Comic comic;
 
-  chitiet({required this.comic});
-
+class _Nextchapter extends State<Nextchapter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(comic.title),
+        centerTitle: true,
+        title: Text("Chapter 2 - Overcome adversity",
+          style: Theme.of(context).textTheme.displayMedium!.copyWith(
+            fontWeight: FontWeight.bold, ),
+        ),
+        backgroundColor: Colors.black26,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              'assets/op.jpg',
-            ),
-            SizedBox(height: 16),
-            Text(
-              'Tác giả: ${comic.author}',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 15),
-            Text(
-              'Mô tả: ${comic.description}',
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 15),
-            Text(
-              'Lượt xem: ${comic.view}',
-              style: TextStyle(fontSize: 18),
-            ),
-            // Thêm các phần khác của giao diện chi tiết tại đây
-          ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(left:30),
+              ),
+              Card(
+                child: Image.asset("./5-o.jpg"),
+                elevation: 10,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left:30),
+              ),
+              Card(
+                child: Image.asset("./6-o.jpg"),
+                elevation: 10,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left:30),
+              ),
+              Card(
+                child: Image.asset("./7-o.jpg"),
+                elevation: 10,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left:30),
+              ),
+              Card(
+                child: Image.asset("./8-o.jpg"),
+                elevation: 10,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left:30),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle the action when the "Go back" button is pressed
+                      // You can use Navigator.pop() to go back to the previous screen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FullChapter(),
+                        ),
+                      );
+                    },
+                    child: Text('Go back'),
+                  ),
+                  SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle the action when the rating button is pressed
+                      // You can navigate to a rating screen or perform any other action
+
+                    },
+                    child: Text('Next chapter'),
+                  ),
+                ],
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(left: 30),
+              ),
+              SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );
